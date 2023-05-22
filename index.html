@@ -69,10 +69,8 @@
         }
     </style>
 </head>
-  
-<body>
-    <h1>Fashion Survey</h1>
-  <form method="post" action="subscriberform.php" target="email">
+    <script>
+         <form method="post" action="subscriberform.php" target="email">
   
 function getData(form) {
   var formData = new FormData(form);
@@ -134,6 +132,10 @@ function whenSubmitted(e) {
     )
   )
 }
+    </script>
+  
+<body>
+    <h1>Fashion Survey</h1>
 
         <div onsubmit="whenSubmitted(event)" element="form" class="form-control">
             <label for="email" id="label-email">
@@ -143,17 +145,6 @@ function whenSubmitted(e) {
             <input type="email"
                    id="email"
                    placeholder="Enter your email" />
-        </div>
-  
-        <div class="form-control">
-            <label for="age" id="label-age">
-                Age
-            </label>
- 
-            <!-- Input Type Text -->
-            <input type="text"
-                   id="age"
-                   placeholder="Enter your age" />
         </div>
   
         <div class="form-control">
@@ -177,8 +168,6 @@ function whenSubmitted(e) {
             <label>
                 Which clothing stores do you shop from most regularly? (check all that apply)
             </label>
- 
-            <!-- Input Type Radio Button -->
  
         <div class="form-control">
             <label>Languages and Frameworks known
