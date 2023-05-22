@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>
+       Are You Wearing Sustainably?
+    </title>
+ 
+    <style>
+ 
+        body {
+            background-color: #fff080;
+            font-family: courier;
+            text-align: center;
+        }
+ 
+        form {
+            background-color: #cfcfcf;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+ 
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 2px grey #777;
+            border-radius: 5px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+ 
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+ 
+        /* Styling Button */
+        button {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+  
+<body>
+    <h1>Fashion Survey</h1>
+  <form method="post" action="subscriberform.php" target="email">
+  
+function getData(form) {
+  var formData = new FormData(form);
+
+  for (var pair of formData.entries()) {
+    console.log(pair[0] + ": " + pair[1]);
+  }
+  console.log(Object.fromEntries(formData));
+}
+      function myFunction() {
+    var elements = document.getElementById("myForm").elements;
+    var obj ={};
+    for(var i = 0 ; i < elements.length ; i++){
+        var item = elements.item(i);
+        obj[item.name] = item.value;
+    }
+
+    document.getElementById("form").innerHTML = JSON.stringify(obj);
+}
+
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  getData(e.target);
+});
+
+?>
+      ---
+  function serializeIt(form) {
+  return (
+    Array.apply(0, form.elements).map(x => 
+      (
+        (obj => 
+          (
+            x.type == "radio" ||
+            x.type == "checkbox"
+          ) ?
+            x.checked ? 
+              obj
+            : 
+              null
+          :
+            obj
+        )(
+          {
+            [x.name]:x.value
+          }
+        )
+      )
+    ).filter(x => x)
+  );
+}
+
+function whenSubmitted(e) {
+  e.preventDefault()
+  console.log(
+    JSON.stringify(
+      serializeIt(document.forms[0]),
+      4, 4, 4
+    )
+  )
+}
+
+        <div onsubmit="whenSubmitted(event)" element="form" class="form-control">
+            <label for="email" id="label-email">
+                Email (optional)
+            </label>
+ 
+            <input type="email"
+                   id="email"
+                   placeholder="Enter your email" />
+        </div>
+  
+        <div class="form-control">
+            <label for="age" id="label-age">
+                Age
+            </label>
+ 
+            <!-- Input Type Text -->
+            <input type="text"
+                   id="age"
+                   placeholder="Enter your age" />
+        </div>
+  
+        <div class="form-control">
+            <label for="role" id="label-role">
+                Age
+            </label>
+             
+            <!-- Dropdown options -->
+            <select name="role" id="role">
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                 <option value="17">17</option>
+                 <option value="18">18</option>
+                 <option value="19+">19+</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+  
+        <div class="form-control">
+            <label>
+                Which clothing stores do you shop from most regularly? (check all that apply)
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+ 
+        <div class="form-control">
+            <label>Languages and Frameworks known
+                <small>(Check all that apply)</small>
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox"
+                       name="inp">Anthropologie</input></label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp">Banana Republic</input></label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp">Big Box Stores (Target, Walmart, K-Mart, Costco)</input></label>
+            <label for="inp-3">
+                <input type="checkbox"
+                       name="inp">Charming Charlie</input></label>
+            <label for="inp-4">
+                <input type="checkbox"
+                       name="inp">Dillard's</input></label>
+            <label for="inp-5">
+                <input type="checkbox"
+                       name="inp">Forever 21</input></label>
+            <label for="inp-6">
+                <input type="checkbox"
+                       name="inp">Hot Topic</input></label>
+            <label for="inp-7">
+                <input type="checkbox"
+                       name="inp">Kohl's</input></label>
+            <label for="inp-7">
+                <input type="checkbox"
+                       name="inp">Macy's</input></label>
+            <label for="inp-7">
+                <input type="checkbox"
+                       name="inp">Marshall's</input></label>
+            <label for="inp-7">
+                <input type="checkbox"
+                       name="inp">Nordstrom (Rack)</input></label>
+            <label for="inp-7">
+            <input type="checkbox"
+                       name="inp">Old Navy/Gap</input></label>
+            <label for="inp-7">
+                <input type="checkbox"
+                       name="inp">Pacsun</input></label>
+            <label for="inp-7">
+                <input type="checkbox"
+                       name="inp">Tillys</input></label>
+            <label for="inp-7">
+                <input type="checkbox"
+                       name="inp">Thrift Stores (Arc, Goodwill, Salvation Army, Dart)</input></label>
+            <label for="inp-7">
+                <input type="checkbox"
+                       name="inp">Zara</input></label>
+            <p>----</p>
+            <label for="inp-7">
+                 <input type="checkbox"
+                       name="inp">Another Store (Please Specify)</input></label>
+            <textarea name="comment" id="comment"
+                placeholder="Please specify">
+            </textarea>
+        </div>
+          <p>Other</p>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp"></input>Boutiques</label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp"></input>Vintage</label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp"></input>Hand-Me-Down (inherited clothing)</label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp"></input>I make my own clothing</label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp"></input>I don't shop for clothing</label>
+        </div>
+  
+        <div class="form-control">
+            <label for="comment">
+                Any comments or suggestions
+            </label>
+ 
+            <!-- multi-line text input control -->
+            <textarea name="comment" id="comment"
+                placeholder="Enter your comment here">
+            </textarea>
+        </div>
+        
+        <input type="submit">
+    </form>
+</body>
+</html>
