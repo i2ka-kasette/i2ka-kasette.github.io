@@ -1,264 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible"
-          content="IE=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <title>
-       Are You Wearing Sustainably?
-    </title>
- <script>
-         <form method="post" action="subscriberform.php" target="email">
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<style>
+.module{
+  cursor:url("https://katzenhausnet.neocities.org/img/6213a65adcd0a55df760bd4a_computer-07%201.png"), auto;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+  background-color: pink;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: pink; 
+  background-image:url("https://katzenhausnet.neocities.org/img/gingham-peach.jpg");
+  border:
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:url("");
+  background-color:#c7c4b3;
+  border-radius:100px;
+  width:10px;
+  height:20px;
   
-function getData(form) {
-  var formData = new FormData(form);
-
-  for (var pair of formData.entries()) {
-    console.log(pair[0] + ": " + pair[1]);
-  }
-  console.log(Object.fromEntries(formData));
-}
-      function myFunction() {
-    var elements = document.getElementById("myForm").elements;
-    var obj ={};
-    for(var i = 0 ; i < elements.length ; i++){
-        var item = elements.item(i);
-        obj[item.name] = item.value;
-    }
-
-    document.getElementById("form").innerHTML = JSON.stringify(obj);
 }
 
-document.getElementById("form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  getData(e.target);
-});
-
-?>
-      ---
-  function serializeIt(form) {
-  return (
-    Array.apply(0, form.elements).map(x => 
-      (
-        (obj => 
-          (
-            x.type == "radio" ||
-            x.type == "checkbox"
-          ) ?
-            x.checked ? 
-              obj
-            : 
-              null
-          :
-            obj
-        )(
-          {
-            [x.name]:x.value
-          }
-        )
-      )
-    ).filter(x => x)
-  );
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image:url("");
 }
-
-function whenSubmitted(e) {
-  e.preventDefault()
-  console.log(
-    JSON.stringify(
-      serializeIt(document.forms[0]),
-      4, 4, 4
-    )
-  )
-}
-    </script>
-    <style>
- 
-        body {
-            background-color: #fff080;
-            font-family: courier;
-            text-align: center;
-        }
- 
-        form {
-            background-color: #cfcfcf;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 30px 20px;
-            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
-        }
- 
-        .form-control {
-            text-align: left;
-            margin-bottom: 25px;
-        }
-
-        .form-control label {
-            display: block;
-            margin-bottom: 10px;
-        }
- 
-        .form-control input,
-        .form-control select,
-        .form-control textarea {
-            border: 2px grey #777;
-            border-radius: 5px;
-            font-family: inherit;
-            padding: 10px;
-            display: block;
-            width: 95%;
-        }
- 
-        /* Styling form-control Radio
-        button and Checkbox */
-        .form-control input[type="radio"],
-        .form-control input[type="checkbox"] {
-            display: inline-block;
-            width: auto;
-        }
- 
-        /* Styling Button */
-        button {
-            background-color: #05c46b;
-            border: 1px solid #777;
-            border-radius: 2px;
-            font-family: inherit;
-            font-size: 21px;
-            display: block;
-            width: 100%;
-            margin-top: 50px;
-            margin-bottom: 20px;
-        }
-    </style>
+</style>
+  <title></title>
+  <link rel="icon" type="image/x-icon" href="https://katzenhausnet.neocities.org/icon/kiyoshi_front.gif">
 </head>
-  
-<body>
-    <h1>Fashion Survey</h1>
+<body class="body">
+   <style>
+    .body{
+     background-image:url('https://katzenhausnet.neocities.org/fill/Ripple%20Poppy.png');
+    background-color:orange;
+    border-radius:50px;
+    }
+    </style>
+    
+  <meta charset="UTF-8">
+    <style>
 
-        <div onsubmit="whenSubmitted(event)" element="form" class="form-control">
-            <label for="email" id="label-email">
-                Email (optional)
-            </label>
- 
-            <input type="email"
-                   id="email"
-                   placeholder="Enter your email" />
+    .text-centre{
+    text-align:center;
+    font-family:courier;
+    color:#241d06
+    }
+    .body-wrapper{
+    max-width:1000px;
+    margin:0 auto;
+    border-radius:50px;
+
+    }
+    header nav{
+    background:#FDD6CD;
+    color:#fff;
+    overflow:hidden;
+    padding:10px auto;
+
+    }
+    header nav ul{
+    list-style:none;
+    overflow:hidden;
+
+    }
+    header nav ul li{
+    float:left;
+    margin-left: 4px;
+    margin-right: 4px;
+    }
+    header nav ul li a{
+    color:#241d06;
+    font-size:1.2em
+    border:1px solid #000;
+    border-radius:50px;
+    }
+    article{
+    margin: 5px;
+    padding: 5px 0;
+    overflow: hidden;
+    padding-top: 0px;
+    background:#fff;
+    font-family:courier;
+    color:#241d06
+    border-radius:50px;
+    width:auto;
+    transform:translateX(-5px);
+    }
+    .title{
+    background: #FDD6CD;
+    padding: 5px;
+    padding-left: 10px;
+    overflow: hidden;
+        margin: 0;
+    font-weight:bolder;
+    font-family:courier;
+    color:#241d06
+    width:auto;
+    }
+    article p, article h1,article h2, article h3, article h4{
+    padding:0 15px;
+    color:#241d06
+    border-radius:50px;
+    width:auto
+    }
+    main{
+    float:left;
+    max-width: 68%;
+    width:1000;
+    }
+    aside{
+    float:right;
+        max-width: 32%;
+        transform: translateY(5px);
+    }
+    footer{
+        width: 100%;
+        float: left;
+        background-color:#FDD6CD
+    }
+    .apri{
+    width:300px;auto; 
+    height:172px;
+    }
+    superdiv{
+    font-family:courier;
+    color:#241d06
+    }
+    .picheader{
+    background-image:url("https://katzenhausnet.neocities.org/fill/16820295806704882-2.png");
+    position:center;middle;
+    height:100px;
+    width:auto;
+    }
+    .bunnyhome{
+      transform:translateX(50px);
+      padding:10px;
+    }
+    .extras{
+      position:center; 
+      transform:translate(25px,10px)
+      transform:translateY(10);
+    }
+    .navbutton{
+    background-color:orange;
+    border-radius:20px;
+    padding;25px;
+    color:black;
+    }
+    .decor{
+      transform:translateY(10);
+    }
+    .picheader2{
+      background-image:url("https://katzenhausnet.neocities.org/Graphics/994337imih6avowk.gif");
+      height:58px;
+    }
+    .buttoncont{
+      background-color:#fdd6cd;
+      background-image:url("https://katzenhausnet.neocities.org/fill/tumblr_inline_n25a46tj0B1qhwjx8540.gif");repeat;
+      padding:30px;
+      border:15px solid orange;
+      width:200px;
+    }
+    </style>
+    <div class="body-wrapper">
+      <header>
+        <h1 class="title text-centre">
+        Catsette Meowsik
+        </h1>
+        <div class="picheader">
+        <img src="" alt=""> 
+        <img class="extras" src="https://katzenhausnet.neocities.org/img/graphics-computers-337800.gif">
+        <img class="extras" src="https://katzenhausnet.neocities.org/img/mini-graphics-computer-973105.gif">
+        <img class="extras" src="https://katzenhausnet.neocities.org/img/mini-graphics-computer-708020.gif">
+        <img class="extras" src="https://katzenhausnet.neocities.org/img/mini-graphics-electronics-957727.gif">
+        <img width="100px" class="decor" src="https://katzenhausnet.neocities.org/img/tumblr_inline_n1ubjoEsX41qmvw6b540.gif">
+        <br>
+        <p class="" font-family="courier"></p>
         </div>
-  
-        <div class="form-control">
-            <label for="role" id="label-role">
-                Age
-            </label>
-             
-            <!-- Dropdown options -->
-            <select name="role" id="role">
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                 <option value="17">17</option>
-                 <option value="18">18</option>
-                 <option value="19+">19+</option>
-                <option value="other">Other</option>
-            </select>
+        <nav align="center" role='navigation'>
+          <ul align="center" style="font-family:courier;color:#241d06">
+               <a class="navbutton" href="https://katzenhausnet.neocities.org">☞Home</a>
+               <a class="navbutton" href="">☞Cool Sites</a>
+               <a class="navbutton" href="https://catsette-meowsik.123guestbook.com" style="color:#241d06">☞Guestbook</a>
+               <a href="" class="navbutton" style="color:#241d06">☞Goodies</a>
+          </ul>
+        </nav>
+        <div class="picheader2">
+        <img src="" alt=""> 
+        <br>
+        <p class="" font-family="courier"></p>
         </div>
-  
-        <div class="form-control">
-            <label>
-                Which clothing stores do you shop from most regularly? (check all that apply)
-            </label>
- 
-        <div class="form-control">
-            <label>Languages and Frameworks known
-                <small>(Check all that apply)</small>
-            </label>
-            <!-- Input Type Checkbox -->
-            <label for="inp-1">
-                <input type="checkbox"
-                       name="inp">Anthropologie</input></label>
-            <label for="inp-2">
-                <input type="checkbox"
-                       name="inp">Banana Republic</input></label>
-            <label for="inp-2">
-                <input type="checkbox"
-                       name="inp">Big Box Stores (Target, Walmart, K-Mart, Costco)</input></label>
-            <label for="inp-3">
-                <input type="checkbox"
-                       name="inp">Charming Charlie</input></label>
-            <label for="inp-4">
-                <input type="checkbox"
-                       name="inp">Dillard's</input></label>
-            <label for="inp-5">
-                <input type="checkbox"
-                       name="inp">Forever 21</input></label>
-            <label for="inp-6">
-                <input type="checkbox"
-                       name="inp">Hot Topic</input></label>
-            <label for="inp-7">
-                <input type="checkbox"
-                       name="inp">Kohl's</input></label>
-            <label for="inp-7">
-                <input type="checkbox"
-                       name="inp">Macy's</input></label>
-            <label for="inp-7">
-                <input type="checkbox"
-                       name="inp">Marshall's</input></label>
-            <label for="inp-7">
-                <input type="checkbox"
-                       name="inp">Nordstrom (Rack)</input></label>
-            <label for="inp-7">
-            <input type="checkbox"
-                       name="inp">Old Navy/Gap</input></label>
-            <label for="inp-7">
-                <input type="checkbox"
-                       name="inp">Pacsun</input></label>
-            <label for="inp-7">
-                <input type="checkbox"
-                       name="inp">Tillys</input></label>
-            <label for="inp-7">
-                <input type="checkbox"
-                       name="inp">Thrift Stores (Arc, Goodwill, Salvation Army, Dart)</input></label>
-            <label for="inp-7">
-                <input type="checkbox"
-                       name="inp">Zara</input></label>
-            <p>----</p>
-            <label for="inp-7">
-                 <input type="checkbox"
-                       name="inp">Another Store (Please Specify)</input></label>
-            <textarea name="comment" id="comment"
-                placeholder="Please specify">
-            </textarea>
-        </div>
-          <p>Other</p>
-            <label for="inp-2">
-                <input type="checkbox"
-                       name="inp"></input>Boutiques</label>
-            <label for="inp-2">
-                <input type="checkbox"
-                       name="inp"></input>Vintage</label>
-            <label for="inp-2">
-                <input type="checkbox"
-                       name="inp"></input>Hand-Me-Down (inherited clothing)</label>
-            <label for="inp-2">
-                <input type="checkbox"
-                       name="inp"></input>I make my own clothing</label>
-            <label for="inp-2">
-                <input type="checkbox"
-                       name="inp"></input>I don't shop for clothing</label>
-        </div>
-  
-        <div class="form-control">
-            <label for="comment">
-                Any comments or suggestions
-            </label>
- 
-            <!-- multi-line text input control -->
-            <textarea name="comment" id="comment"
-                placeholder="Enter your comment here">
-            </textarea>
-        </div>
-        
-        <input type="submit">
-    </form>
+      </header>
+      <main>
+      <div>
+      </div>
+        <article border-radius="50px" width="1000px" align="normal">
+          <h1 class="title"></h1>
+          <h3><img style="border:1px solid #000;background-color:#FDD6CD;" src="https://katzenhausnet.neocities.org/icon/cassette_tape-1.png" alt="cassette_tape-1"> Introduction</h3>
+          <p>Hi! I'm just another person on the internet who's interested in many different things. Quite a few of those things are pretty nerdy, so stay tuned!</p><br>
+        </article>
+        <article width="1000px">
+          <h2 class="title"></h2>
+          <h3><img style="border:1px solid #000;background-color:#FDD6CD;" src="https://katzenhausnet.neocities.org/icon/message_file-0.png" alt="message_file-0"> About Me</h3>
+          <p>Me</p>
+          <p>✿ Name: Shinko</p>
+          <br>
+          <img class="bunnyhome" src="https://katzenhausnet.neocities.org/Graphics/2416980z4rdho42mc.gif">
+          <br>
+          <p>
+          'Puter haters not allowed! >:-[ ✖
+          </p>
+          <p>Games I Like</p>
+          <p>✿ Animal Crossing ✿ Legend of Zelda ✿ Little Big Planet ✿ Minecraft ✿ Sudoku ✿ The Stanley Parable ✿</p>
+          <p>Hobbies</p>
+          <p>✿ Coding HTML/CSS ✿ Electronic Music ✿ Digital Art + Animation ✿ Crafting ✿ Scrapbooking ✿ Organizing ✿ Writing ✿ Dance ✿</p>
+          <p>Interests</p>
+          <p>✿ Psychology ✿ Philosophy ✿ Retro + Vintage Anything ✿ Environmentalism ✿ Ethics ✿ OCs ✿ Technology (Game Consoles + Computers, etc.) ✿ Cats ✿ Music ✿</p>
+          <p>Favorite Music Genres</p>
+          <p>✿ Vaporwave ✿ Electronic ✿ Electronica ✿ Indie-Pop ✿ 80's Dance ✿ Downtempo ✿</p>
+          <p>Favorite Artists/Inspo</p>
+          <p>✿ A.L.L.I.S.O.N ✿ body end tag ✿ Casiopea ✿ ESPRIT 空想 (George Clanton) ✿ Especia ✿ Eyeliner ✿ FM Skyline ✿ Graham Kartna ✿ Home ✿ Jack Stauber ✿ Kidorikko (きどりっこ) ✿ Macross 82-99 ✿ Oliver Buckland ✿ Plasterbrain ✿ Saint Pepsi ✿ Surfing ✿ The Derevolutions ✿ VHS LOGOS ✿ architecture in tokyo ✿ dreamcorp. ✿</p>
+          <p></p>
+          <p>Favorite Aesthetics</p>
+          <p>✿ Kawaii ✿ Vaporwave ✿ Decoupage ✿ Techcore ✿ Y2K ✿ Vintage ✿ 70's ✿ Shabby Chic ✿ Studycore (without the consumerism) ✿ Weirdcore/Liminal Space Aesthetics (and the kawaii variety) ✿ Apricore (a self-made aesthetic combining all of the above; with the inclusion of some retro animal crossing vibes! Lots of bright orange,#FDD6CD and old computers! You can see it in my album covers and art, as well as my fashion!)</p>
+        </article>
+      </main>
+      <aside>
+        <h3 class="title"><small><a style="color:#241d06;" href="https://open.spotify.com/artist/7GumxJBBc93APWehdrBaX5">Meowsik ⇨</a></small></h3><img width="300px" height="200px" src="https://katzenhausnet.neocities.org/img/tumblr_73c526470746107a98207665ae1f23fe_4da65b24_540.jpg" alt="tumblr_73c526470746107a98207665ae1f23fe_4da65b24_540">
+        <h3 class="title"><small><a style="color:#241d06;" href="https://www.youtube.com/channel/UCmWxD9GtofEnFGgv6NczcRg">'Puter Friends⇨</a></small></h3><img width="300px" height="230px" src="https://katzenhausnet.neocities.org/img/IMG_4022.jpeg" alt="romromrom2">
+        <h3 class="title"></h3>
+        <h3 class="title"><small><a style="color:#241d06;" href="">Operating System ⇨</a></small></h3><img class="apri" src="https://katzenhausnet.neocities.org/img/167226915215222770%20copy.gif" alt="167226915215222770%20copy">
+         <h3 class="title"><small></small></h3>
+      </aside>
+      <br>
+      <br>
+      <br>
+      <br>
+      <aside width="100px" padding="40px" class="aside;buttoncont">
+      <br> 
+      <div class="buttoncont">
+      <img padding="10px" position="center;middle" align="center;middle" src="https://katzenhausnet.neocities.org/img/IMG_5157.PNG" alt="167226915215222770%20copy">
+      <img src="https://katzenhausnet.neocities.org/Graphics/2870408ugzb1v32l4.gif">
+      <img src="https://katzenhausnet.neocities.org/Graphics/2010738q0nt5mkrsu.jpg">
+      <img src="https://katzenhausnet.neocities.org/Graphics/2132985khoxejlmjo.gif"> 
+      <img src="https://katzenhausnet.neocities.org/Graphics/1438653rlcc3g20gg.gif">
+      <img src="https://katzenhausnet.neocities.org/Graphics/297511by527j2p8n.gif"> 
+      <img src="https://katzenhausnet.neocities.org/Graphics/1560455uq90pcu6ha.gif"> 
+      <img src="https://katzenhausnet.neocities.org/Graphics/3739001hogp1m4ruz.gif"> 
+      <img src="https://katzenhausnet.neocities.org/Graphics/1029856fl78yh89fo.gif">
+      <img src="https://katzenhausnet.neocities.org/Graphics/37383jmez2pa0iv.gif"> 
+      <img src="https://katzenhausnet.neocities.org/Graphics/471349ke1lz8c8hj.gif"> 
+      <img src="https://katzenhausnet.neocities.org/Graphics/920201pddaoxaprc.jpg">
+      <img src="https://katzenhausnet.neocities.org/Graphics/1404454m8koc6mu0c.gif">
+      <img src="https://katzenhausnet.neocities.org/Graphics/223979qnh6dwmabq.gif">
+      </div>
+         <br>
+      </aside>
+ <marquee behavior=scroll direction=down scrollamount=4 scrolldelay=26 height=565 style='position:absolute; left:89%; top:38px; width:38; height:565px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=5 scrolldelay=45 height=536 style='position:absolute; left:52%; top:139px; width:38; height:536px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=4 scrolldelay=25 height=616 style='position:absolute; left:65%; top:125px; width:38; height:616px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=4 scrolldelay=27 height=500 style='position:absolute; left:13%; top:109px; width:38; height:500px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=6 scrolldelay=15 height=607 style='position:absolute; left:95%; top:182px; width:38; height:607px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=5 scrolldelay=28 height=576 style='position:absolute; left:80%; top:5px; width:38; height:576px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=5 scrolldelay=10 height=600 style='position:absolute; left:59%; top:181px; width:38; height:600px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=3 scrolldelay=15 height=695 style='position:absolute; left:59%; top:109px; width:38; height:695px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=3 scrolldelay=38 height=679 style='position:absolute; left:65%; top:39px; width:38; height:679px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=4 scrolldelay=26 height=623 style='position:absolute; left:13%; top:124px; width:38; height:623px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=3 scrolldelay=36 height=553 style='position:absolute; left:6%; top:43px; width:38; height:553px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=3 scrolldelay=38 height=505 style='position:absolute; left:81%; top:195px; width:38; height:505px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=2 scrolldelay=16 height=615 style='position:absolute; left:17%; top:97px; width:20; height:615px;'><img width="40px" src=https://katzenhausnet.neocities.org/graphics-computers-886678.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=5 scrolldelay=36 height=503 style='position:absolute; left:65%; top:43px; width:38; height:503px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=6 scrolldelay=39 height=557 style='position:absolute; left:88%; top:136px; width:38; height:557px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=2 scrolldelay=36 height=505 style='position:absolute; left:20%; top:4px; width:38; height:505px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=5 scrolldelay=27 height=654 style='position:absolute; left:78%; top:18px; width:38; height:654px;'><img width="40px" src=https://katzenhausnet.neocities.org/graphics-computers-886678.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=6 scrolldelay=12 height=643 style='position:absolute; left:6%; top:90px; width:38; height:643px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=4 scrolldelay=49 height=584 style='position:absolute; left:13%; top:51px; width:38; height:584px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+<marquee behavior=scroll direction=down scrollamount=3 scrolldelay=21 height=512 style='position:absolute; left:5%; top:16px; width:38; height:512px;'><img src=http://dl9.glitter-graphics.net/pub/23/23629n5ke1cw6xb.gif border=0></marquee>
+
+      <footer position="center" align="center" class="footer">
+        <a style="color:#241d06" align="center" href='https://webring.dinhe.net/prev/https://katzenhausnet.neocities.org'>⇦ <img src="https://katzenhausnet.neocities.org/img/Gewuq7k.png" alt="Gewuq7k"></a> <a style="color:#241d06" align="center" href='https://webring.dinhe.net/next/https://katzenhausnet.neocities.org'><img src="https://katzenhausnet.neocities.org/img/k5aqaNt.gif" alt="k5aqaNt"> ⇨</a>
+        <br>
+        <img src="https://katzenhausnet.neocities.org/img/IMG_3368.GIF"> 
+      </footer>
+    </div>
 </body>
 </html>
